@@ -1,0 +1,20 @@
+{
+  "name": "theme-wordpress",
+  "version": "1.0.0",
+  "description": "Base para Temas de Wordpress",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Wordpress",
+    "Theme",
+    "HTML5",
+    "SCSS",
+    "CSS",
+    "JS",
+    "Font-Awesome"
+  ],
+  "author": "Jefferson Rodrigues",
+  "license": "ISC"
+}
