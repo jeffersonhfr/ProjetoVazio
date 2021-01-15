@@ -1,27 +1,23 @@
 {
-  "name": "theme-wordpress",
-  "version": "1.0.0",
-  "description": "Base para Temas de Wordpress",
+  "name": "projeto vazio",
+  "version": "0.1.0",
+  "description": "HTML5, CSS, JS",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "Wordpress",
-    "Theme",
-    "HTML5",
-    "SCSS",
-    "CSS",
-    "JS",
-    "Font-Awesome"
-  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeffersonhfr/ProjetoVazio.git"
+  },
   "author": "Jefferson Rodrigues",
   "license": "ISC",
-  "dependencies": {
-    "bootstrap": "file:bootstrap",
-    "node": "^15.4.0"
+  "bugs": {
+    "url": "https://github.com/jeffersonhfr/ProjetoVazio/issues"
   },
-  "devDependencies": {
-    "sass": "^1.32.4"
+  "homepage": "https://github.com/jeffersonhfr/ProjetoVazio#readme",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "node-sass": "^5.0.0"
   }
 }
