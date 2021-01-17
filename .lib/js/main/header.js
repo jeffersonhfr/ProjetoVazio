@@ -4,5 +4,6 @@
     console.log('Header');
   }
   
+  header();
   
   }
