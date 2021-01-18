@@ -1,0 +1,4 @@
+{
+  //teste
+  console.log('Plugin');
+}

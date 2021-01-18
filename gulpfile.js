@@ -15,7 +15,7 @@ function compilaSass(){
   .pipe(browserSync.stream());
 }
 
-gulp.task('sass', compilaSass);
+exports.compilasass = compilaSass;
 
 function gulpJS(){
   return gulp
@@ -23,8 +23,18 @@ function gulpJS(){
   .pipe(concat('main.js'))
   .pipe(babel({ presets: ['@babel/env'] }))
   .pipe(gulp.dest('.lib/js/'))
-  
 }
+
+function pluginJS(){
+  return gulp
+  .src('.lib/js/plugin/*.js')
+  .pipe(concat('plugins.js'))
+  .pipe(uglify(/* options */))
+  .pipe(gulp.dest('js/'))
+  .pipe(browserSync.stream());
+}
+
+exports.pluginjs = pluginJS;
 
 function jsMin(){
   return gulp
@@ -35,10 +45,8 @@ function jsMin(){
   .pipe(browserSync.stream());
 }
 
-gulp.task('mainjs', gulpJS);
-gulp.task('minificajs', jsMin);
-
-
+exports.mainjs = gulpJS;
+exports.minificajs = jsMin;
 
 
 function browser(){
@@ -49,14 +57,15 @@ function browser(){
   })
 }
 
-gulp.task('browser-sync', browser)
+exports.browserSync = browser;
+
 
 function watch(){
   gulp.watch('.lib/scss/**/*.scss', compilaSass);
   gulp.watch(['*.html', '*.php']).on('change', browserSync.reload);
   gulp.watch('.lib/js/main/*.js', gulpJS);
+  gulp.watch('.lib/js/plugin/*.js', pluginJS);
   gulp.watch('.lib/js/main.js', jsMin);
 }
-
-gulp.task('watch', watch);
-gulp.task('default', gulp.parallel('watch','browser-sync', 'sass', 'mainjs'));
+exports.watch = watch;
+exports.default = gulp.parallel(watch, browser, compilaSass, gulpJS, pluginJS);
